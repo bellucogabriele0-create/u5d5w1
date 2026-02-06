@@ -19,4 +19,6 @@ public class PostazioneSer {
     public List<Postazione> getAll() {
         return postazioneRepo.findAll();
     }
+
+
 }

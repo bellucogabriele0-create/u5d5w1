@@ -26,4 +26,9 @@ public class Prenotazione {
     @JoinColumn(name = "id_postazione")
     private Postazione idPostazionefk;
 
+    public Prenotazione(LocalDate dataPrenotazione, Utente idUtentefk, Postazione idPostazionefk) {
+        this.dataPrenotazione = dataPrenotazione;
+        this.idUtentefk = idUtentefk;
+        this.idPostazionefk = idPostazionefk;
+    }
 }

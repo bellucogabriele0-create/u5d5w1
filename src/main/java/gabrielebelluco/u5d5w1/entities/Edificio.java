@@ -22,4 +22,9 @@ public class Edificio {
     @Column(nullable = false)
     private String cittaEdificio;
 
+    public Edificio(String nomeEdificio, String indirizzoEdificio, String cittaEdificio) {
+        this.nomeEdificio = nomeEdificio;
+        this.indirizzoEdificio = indirizzoEdificio;
+        this.cittaEdificio = cittaEdificio;
+    }
 }

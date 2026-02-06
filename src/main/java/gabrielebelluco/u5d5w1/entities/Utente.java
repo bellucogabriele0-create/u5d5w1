@@ -20,4 +20,8 @@ public class Utente {
     @Column(nullable = false, unique = true)
     private String email;
 
+    public Utente(String userName, String email) {
+        this.userName = userName;
+        this.email = email;
+    }
 }

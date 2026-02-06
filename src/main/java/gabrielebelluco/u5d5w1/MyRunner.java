@@ -70,14 +70,20 @@ public class MyRunner implements CommandLineRunner {
 //            Prenotazione prenotazione5 = new Prenotazione(LocalDate.now(), Utente3, postazione3);
 //            prenotazioneSer.save(prenotazione5);
 //        } catch (RuntimeException exception) {
-//            System.out.println("cadi nel catch22222" + exception.getMessage());
+//            System.out.println("cadi nel catch22222");
 //        }
-        
-        try {
-            Prenotazione prenotazione6 = new Prenotazione(LocalDate.now(), Utente1, postazione2);
-            prenotazioneSer.save(prenotazione6);
-        } catch (RuntimeException exception) {
-            System.out.println("cadi nel catch6666");
-        }
+
+        postazioneSer.findByTipo(TipoPostazione.PRIVATO).forEach(ufficio -> System.out.println(ufficio.getTipoPostazione()));
+//        postazioneSer.findByTipo(TipoPostazione.OPENSPACE).forEach(ufficio -> System.out.println(ufficio.getTipoPostazione()));
+//        postazioneSer.findByTipo(TipoPostazione.SALA_RIUNIONI).forEach(ufficio -> System.out.println(ufficio.getTipoPostazione()));
+//
+//        System.out.println("ric per città");
+
+        postazioneSer.findByCitta("Cagliari").forEach(citta -> System.out.println(citta.getDescrizionePostazione()));
+//        postazioneSer.findByCitta("Milano").forEach(citta -> System.out.println(citta.getDescrizionePostazione()));
+//        postazioneSer.findByCitta("Oklahoma").forEach(citta -> System.out.println(citta.getCodicePostazione()));
+
+
     }
 }
+

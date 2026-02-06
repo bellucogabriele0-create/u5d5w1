@@ -1,6 +1,7 @@
 package gabrielebelluco.u5d5w1.Service;
 
 import gabrielebelluco.u5d5w1.entities.Postazione;
+import gabrielebelluco.u5d5w1.entities.TipoPostazione;
 import gabrielebelluco.u5d5w1.repositories.PostazioneRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,15 @@ public class PostazioneSer {
 
     public List<Postazione> getAll() {
         return postazioneRepo.findAll();
+    }
+
+
+    public List<Postazione> findByTipo(TipoPostazione tipoPostazione) {
+        return postazioneRepo.findByTipoPostazione(tipoPostazione);
+    }
+
+    public List<Postazione> findByCitta(String citta) {
+        return postazioneRepo.findByIdEdificiofk_CittaEdificio(citta);
     }
 
 

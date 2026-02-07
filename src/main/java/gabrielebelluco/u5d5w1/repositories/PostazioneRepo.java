@@ -12,5 +12,7 @@ import java.util.List;
 public interface PostazioneRepo extends JpaRepository<Postazione, Long> {
     List<Postazione> findByTipoPostazione(TipoPostazione tipoPostazione);
 
+    boolean existsById(Long idPostazione);
+
     List<Postazione> findByIdEdificiofk_CittaEdificio(String citta);
 }
